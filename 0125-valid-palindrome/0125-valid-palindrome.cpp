@@ -4,9 +4,7 @@ public:
         int left = 0;
         int right = s.size()-1;
         
-        for(int i = 0; i< s.size(); i++){
-            s[i] = tolower(s[i]);
-        }
+        transform(s.begin(), s.end(), s.begin(), ::tolower);
         
         while(left<=right){
             if(!isalnum(s[left])){
