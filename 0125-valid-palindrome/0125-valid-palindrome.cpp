@@ -23,8 +23,7 @@ public:
             else{
                 left++;
                 right--;
-            }
-            
+            }       
         }
         return true;
     }
