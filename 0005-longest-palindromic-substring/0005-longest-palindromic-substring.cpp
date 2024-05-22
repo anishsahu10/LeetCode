@@ -5,10 +5,10 @@ public:
         for(int i = 0; i<s.size(); i++){
             string even = pString(s, i, i+1);
             string odd = pString(s, i, i);
-            if(even.size() > odd.size() && max(even.size(), odd.size()) > ans.size()){
+            if(even.size() > odd.size() && even.size() > ans.size()){
                 ans = even;
             }
-            else if(even.size()<odd.size() && max(even.size(), odd.size()) > ans.size()){
+            else if(odd.size() > even.size() && odd.size() > ans.size()){
                 ans = odd;
             }
         }
