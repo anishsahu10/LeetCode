@@ -10,7 +10,7 @@ public:
         return ans;
     }
     
-        int pCount(const string &s, int left, int right){
+    int pCount(const string &s, int left, int right){
         int count = 0;
         while(left>=0 && right < s.size() && s[left] == s[right]){
             left--;
