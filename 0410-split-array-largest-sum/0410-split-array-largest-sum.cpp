@@ -15,14 +15,18 @@ public:
     
     int splitArray(vector<int>& nums, int k) {
         if(k>nums.size()) return -1;
-        int ans;
+        int ans = -1;
         int l = *max_element(nums.begin(), nums.end());
         int h = accumulate(nums.begin(), nums.end(), 0);
         
         while(l<=h){
             int m = (l+h)/2;
             int noOfSA = countSA(nums, m);
-            if(noOfSA > k) l = m+1;
+            if(noOfSA == k){
+                ans = m;
+                h = m-1;
+            }
+            else if(noOfSA > k) l = m+1;
             else h = m-1;
         }
         return l;
