@@ -34,7 +34,7 @@ public:
         if(data.size() == 0) return NULL;
         stringstream s(data);
         string str;
-        getline(s,str,',');
+        getline(s,str,','); // ',' is the delimiter character so single quotes mandatory.
         TreeNode* root = new TreeNode(stoi(str));
         queue<TreeNode*> q;
         q.push(root);
