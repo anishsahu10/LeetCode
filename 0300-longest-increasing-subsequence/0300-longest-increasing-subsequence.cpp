@@ -3,11 +3,12 @@ public:
     int f(int i, int prev_i, vector<int>& nums, int n, vector<vector<int>> &dp){
         if(i==n) return 0;
         if(dp[i][prev_i + 1] != -1) return dp[i][prev_i + 1];
-        int len = 0 + f(i+1, prev_i, nums, n, dp);
+        int notPick = 0 + f(i+1, prev_i, nums, n, dp);
+        int pick = 0;
         if(prev_i == -1 || nums[i]>nums[prev_i]){
-            len = max(len, 1 + f(i+1, i, nums, n, dp));
+            pick = 1 + f(i+1, i, nums, n, dp);
         }
-        return dp[i][prev_i + 1] = len;
+        return dp[i][prev_i + 1] = max(pick, notPick);
     }
     
     int lengthOfLIS(vector<int>& nums) {
